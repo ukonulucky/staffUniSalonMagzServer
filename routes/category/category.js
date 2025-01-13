@@ -3,7 +3,7 @@ const express = require("express");
 const { updateCategoryController, getAllCategoryController, createCategoryController } = require("../../controllers/categories/categoryController");
 const multer = require("multer");
 
-
+const storage = require('../../utils/fileUpload/storage');
 
 const upload = multer({storage: storage})
 
