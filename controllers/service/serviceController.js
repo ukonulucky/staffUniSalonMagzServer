@@ -50,7 +50,7 @@ if (!isValidObjectId(categoryId.toString())) {
     return res.status(201).json({
       status: "success",
         message: "Service created successfully",
-       service
+       newService
     });
   }
 );
