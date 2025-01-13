@@ -1,10 +1,12 @@
+const expressAsyncHandler = require("express-async-handler");
 const serviceModel = require("../../model/service");
+const isValidObjectId = require("../../utils/mongooseIdValidity");
 
 const createServiceController = expressAsyncHandler(
     async (req, res) => {
       
     const { servicePrice, serviceName, categoryId } = req.body;
-
+console.log(req.body)
    
         if (!servicePrice || !serviceName || !categoryId) { 
   throw new Error("Missing credentials")
@@ -27,12 +29,13 @@ if (!isValidObjectId(categoryId.toString())) {
             /* FIND category */
            
             const serviceList = allService.filter(service => { 
-                if (service?.categoryId._id === categoryId) { 
+                if (service?.categoryId._id == categoryId) { 
                     return service?.categoryId?.categoryName
                 }
             })
+          
             if (serviceList.length > 0) { 
-                throw new Error(`Service ${serviceName} already exist in category ${serviceList[0]}`)
+                throw new Error(`Service ${serviceName} already exist in category ${serviceList[0]?.categoryId?.categoryName}`)
             }
         }
         
