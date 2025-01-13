@@ -6,7 +6,7 @@ const createServiceController = expressAsyncHandler(
     async (req, res) => {
       
     const { servicePrice, serviceName, categoryId } = req.body;
-console.log(req.body)
+
    
         if (!servicePrice || !serviceName || !categoryId) { 
   throw new Error("Missing credentials")
@@ -72,4 +72,33 @@ const allServiceController = expressAsyncHandler(
   }
 );
 
-module.exports = { createServiceController, allServiceController };
+
+const deleteSingleServiceController = expressAsyncHandler(
+    async (req, res) => {
+
+
+        const { serviceId } = req.params
+        if (!serviceId) { 
+            throw new Error("Missing credentials")
+                  }
+          
+          // check category Id
+          if (!isValidObjectId(serviceId.toString())) {
+              throw new Error("Invalid service Id");
+            }
+    
+       
+        
+        const service = await serviceModel.findByIdAndDelete(serviceId)
+        if (!service) { 
+   throw new Error("failed to delete service")
+        }
+    return res.status(200).json({
+      status: "success",
+        message: "Service deleted successfully",
+      service
+    });
+  }
+);
+
+module.exports = { createServiceController, allServiceController,deleteSingleServiceController  };
