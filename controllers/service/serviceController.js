@@ -28,7 +28,7 @@ if (!isValidObjectId(categoryId.toString())) {
            
             const serviceList = allService.filter(service => { 
                 if (service?.categoryId._id === categoryId) { 
-                    return service?.categoryId.categoryName
+                    return service?.categoryId?.categoryName
                 }
             })
             if (serviceList.length > 0) { 
