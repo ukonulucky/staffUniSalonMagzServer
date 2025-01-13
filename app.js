@@ -16,6 +16,7 @@ const dbConnetFunc = require('./config/db/dbConnect');
 const userRouter = require("./routes/user/userRoute");
 const categoryRouter = require("./routes/category/category");
 const serviceRouter = require("./routes/service/serviceRouter");
+const bookingRouter = require("./routes/booking/booking");
 
 
 const PORT = process.env.PORT || 7000
@@ -46,9 +47,9 @@ app.use(cors(corsOptions))
 
 /* app.use("/api/v1/admin", adminRouter)
 
-
-app.use("/api/v1/food", foodRouter)
 */
+
+app.use("/api/v1/booking", bookingRouter)
 
 app.use("/api/v1/service", serviceRouter) 
 

@@ -10,8 +10,6 @@ serviceRouter.get("/services", allServiceController);
 serviceRouter.delete("/delete/:serviceId", deleteSingleServiceController); 
 
 
-/*  */
-
 module.exports = serviceRouter;
 
 

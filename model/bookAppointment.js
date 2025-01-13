@@ -7,16 +7,13 @@ const mongoose = require("mongoose");
      },
      email: { type: String, required: true },
      phone: { type: String, required: true },
-     date: { type: Date, required: true },
-     category: {
+     date: { type: String, required: true },
+     categoryId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Category",
         required: true
      },
-     services: {
-         type: [String],
-         required: true
-     }
+     services: [String]
  },
  { timestamps: true }
 ); 
