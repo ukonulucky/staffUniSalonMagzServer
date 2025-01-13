@@ -58,4 +58,18 @@ if (!isValidObjectId(categoryId.toString())) {
   }
 );
 
-module.exports = { createServiceController };
+
+const allServiceController = expressAsyncHandler(
+    async (req, res) => {
+    
+        const services = await serviceModel.find()
+
+    return res.status(200).json({
+      status: "success",
+        message: "services fetched successfully",
+      services
+    });
+  }
+);
+
+module.exports = { createServiceController, allServiceController };
