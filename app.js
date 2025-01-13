@@ -26,7 +26,7 @@ const app = express();
 
 
 const corsOptions = {
-    origin:["*"],
+    origin:"*",
     methods:  ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
     credentials: true, // Enable credentials (cookies, authorization headers, etc.)
 }
