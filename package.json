@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ukonulucky/staffordUniTaskServer.git"
+    "url": "git+https://github.com/ukonulucky/staffUniSalonMagzServer"
   },
   "author": "group 5 Msc. software engineering staffordshire",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ukonulucky/staffordUniTaskServer.git/issues"
+    "url": "https://github.com/ukonulucky/staffUniSalonMagzServer/issues"
   },
-  "homepage": "https://github.com/ukonulucky/staffordUniTaskServer.git#readme",
+  "homepage": "https://github.com/ukonulucky/staffUniSalonMagzServer#readme",
   "dependencies": {
     "aws-sdk": "^2.1692.0",
     "axios": "^1.7.9",
