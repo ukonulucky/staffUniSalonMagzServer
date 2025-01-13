@@ -7,7 +7,7 @@ const categoryModel = require("../../model/categories");
 // cretate controller
 const createCategoryController = expressAsyncHandler(
     async (req, res) => {
-        const image = req.file
+        const image = req?.file?.path.toString()
     const { categoryName } = req.body;
 
    
