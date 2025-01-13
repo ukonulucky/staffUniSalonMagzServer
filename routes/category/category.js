@@ -15,7 +15,7 @@ categoryRouter.get("/categories",getAllCategoryController);
 
  /* create category controller */
 
-categoryRouter.post("/create", upload("file"),createCategoryController); 
+categoryRouter.post("/create",upload.single("file"),createCategoryController); 
 
 
 module.exports = categoryRouter;
