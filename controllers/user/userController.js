@@ -70,9 +70,8 @@ mailSender(message,createdEmail,"Registration")
 
   return res.status(201).json({
     status: "success",
-    message: "Please verify your email",
-    data: registeredUser,
-    meta: message,
+    message: "Registration successful",
+    data: registeredUser
   });
 });
 
