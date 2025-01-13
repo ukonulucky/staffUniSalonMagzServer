@@ -5,6 +5,7 @@ const multer = require("multer");
 
 const storage = require('../../utils/fileUpload/storage');
 
+
 const upload = multer({storage: storage})
 
 const categoryRouter = express.Router();
@@ -14,10 +15,9 @@ categoryRouter.get("/categories",getAllCategoryController);
 
  /* create category controller */
 
-categoryRouter.post("/create", upload(file),createCategoryController); 
+categoryRouter.post("/create", upload("file"),createCategoryController); 
 
 
 module.exports = categoryRouter;
 
 
-/* /api/v1/admin/reveiw/approve */

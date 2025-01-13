@@ -15,10 +15,10 @@ const storage = new CloudinaryStorage({
     cloudinary: cloudinary,
    allowedFormats:["png", "jpg", "jpeg"],
    params: {
-    folder:"website",
+    folder:"salonWebsite",
        format: async (req, file) => { 
          try {
-              console.log("request sent", req)
+          
            return "jpeg"
          } catch (error) {
             console.log("error from mutter", error)
