@@ -77,7 +77,7 @@ const getAllCategoryController = expressAsyncHandler(async (req, res) => {
     const categories = await categoryModel.find();
     return res.status(200).json({
       status: "success",
-      categories,
+      categories
     });
   } catch (error) {
     throw new Error(error);
