@@ -87,7 +87,11 @@ const deleteSingleServiceController = expressAsyncHandler(
               throw new Error("Invalid service Id");
             }
     
-       
+        const doesServiceExist = await serviceModel.findById(serviceId)
+        
+        if (!doesServiceExist) { 
+            throw new Error("Service does not exist")
+        }
         
         const service = await serviceModel.findByIdAndDelete(serviceId)
         if (!service) { 
