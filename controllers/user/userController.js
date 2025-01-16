@@ -31,7 +31,7 @@ const userRegisterController = expressAsyncHandler(async (req, res) => {
 
   const { email: createdEmail } = registeredUser;
   /* endpoint to verify email */
-  const emailVerificationToken = registeredUser.createEmailVerificationToken();
+  /* const emailVerificationToken = registeredUser.createEmailVerificationToken();
   const verifyEmailEndpoint =
     process.env.SERVER_URL +
     "/api/v1/user" +
@@ -40,7 +40,7 @@ const userRegisterController = expressAsyncHandler(async (req, res) => {
     "/" +
     emailVerificationToken;
   const message =
-    "Please click here " + verifyEmailEndpoint + " to verify your email";
+    "Please click here " + verifyEmailEndpoint + " to verify your email"; */
   /* 
        const { subject,to, emailTemplate} = options; 
     */
@@ -50,10 +50,10 @@ const userRegisterController = expressAsyncHandler(async (req, res) => {
  
 
   /*    sendBrevoEmail(option2) */
-  /* const option = {
-    subject: "Email Verification",
+  const option = {
+    subject: "Registration",
     emailTemplate:
-      "Please click here " + verifyEmailEndpoint + " to verify your email",
+      "Thank you for siginin up with magz salone",
     to: [
       {
         email: createdEmail,
@@ -62,7 +62,7 @@ const userRegisterController = expressAsyncHandler(async (req, res) => {
     ],
   };
 
-  sendBrevoEmail(option); */
+  sendBrevoEmail(option); 
 
   /* 
 mailSender(message,createdEmail,"Registration")

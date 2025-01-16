@@ -34,8 +34,24 @@ console.log("body", req.body, JSON.parse(services))
             services
 
         })
-   
 
+    const { 
+      _id
+    } = booking
+   
+        const option = {
+          subject: "Booking Notification",
+          emailTemplate:
+            `Hello ${fullName} your booking was successfull  and your booking Id  is ${_id}. Looking forawrd to serve you...Cheers.`,
+          to: [
+            {
+              email,
+              name: fullName,
+            },
+          ],
+        };
+      
+        sendBrevoEmail(option); 
     return res.status(201).json({
       status: "success",
         message: "Booking created successfully",
