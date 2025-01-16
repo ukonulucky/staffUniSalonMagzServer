@@ -2,6 +2,7 @@ const expressAsyncHandler = require("express-async-handler");
 
 const isValidObjectId = require("../../utils/mongooseIdValidity");
 const bookAppointmentModel = require("../../model/bookAppointment");
+const sendBrevoEmail = require("../../utils/services/mailSender");
 
 
 
