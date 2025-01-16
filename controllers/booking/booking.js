@@ -13,7 +13,7 @@ const createBookingController = expressAsyncHandler(
  
 console.log("body", req.body, JSON.parse(services))
         
-        if (!fullName || !email || !phone || !date || !categoryId  || JSON.parse(services).length == 0) { 
+        if (!fullName || !email  || !date || !categoryId  || JSON.parse(services).length == 0) { 
   throw new Error("Missing credentials")
         }
 

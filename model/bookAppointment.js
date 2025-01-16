@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
          required: true
      },
      email: { type: String, required: true },
-     phone: { type: String, required: true },
+     phone: { type: String, default: null },
      date: { type: String, required: true },
      categoryId: {
         type: mongoose.Schema.Types.ObjectId,

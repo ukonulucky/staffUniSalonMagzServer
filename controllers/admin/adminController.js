@@ -73,8 +73,6 @@ const activateReviewAdminController = expressAsyncHandler(
 
         const review = await ReviewModel.findById(reviewId).populate("userId").exec();
         
-
-        console.log("review found", review)
         const { userId: { 
             fullName,
             email
@@ -236,6 +234,34 @@ const deleteUserAdminController = expressAsyncHandler(
 );
 
 
+const deleteReviewAdminController = expressAsyncHandler(
+  async (req, res) => {
+    const { reviewId } = req.params;
+
+      
+      if (!reviewId) { 
+ throw new Error("Missing credential")
+      }
+    // check if restaurant details are passed correctly
+    if (!isValidObjectId(reviewId.toString())) {
+      throw new error("Invalid review Id");
+    }
+
+    const review = await ReviewModel.findOneAndDelete({
+    _id: reviewId
+    });
+
+    if(!review){
+     throw new Error(`failed to delete review`)
+      }
+
+    return res.status(201).json({
+      status: "success",
+      message: "Review deleted successfuly",
+    });
+  }
+);
 
 
-module.exports = { activateRestaurantAdminController, deleteUserAdminController, activateReviewAdminController };
+
+module.exports = { activateRestaurantAdminController, deleteUserAdminController, activateReviewAdminController,deleteReviewAdminController };
